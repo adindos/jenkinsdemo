@@ -15,10 +15,10 @@ pipeline {
         }
         stage('build') {
             steps {
-                echo 'Deploy tn_service_registry build automatically #22'
+                echo 'Deploy demo jenkins build automatically'
                 sh 'mvn --version'
 
-                dir('/var/lib/jenkins/workspace/demo_main') {
+                dir('/var/lib/jenkins/workspace/demojenkins') {
                      sh 'mvn clean package -DskipTests'
                 }
             }
