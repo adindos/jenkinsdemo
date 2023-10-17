@@ -35,7 +35,7 @@ pipeline {
                     sh "cp /var/lib/jenkins/workspace/jenkins_demo_main/target/jenkinsdemo-0.0.1-SNAPSHOT.jar ${stagingPath}"
                     sh 'java -jar ${stagingPath}/jenkinsdemo-0.0.1-SNAPSHOT.jar'
                 }
-                echo 'Deploy demo jenkins automatically #'
+                echo 'Deploy demo jenkins automatically #10'
             }
         }
     }
