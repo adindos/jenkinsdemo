@@ -15,7 +15,7 @@ pipeline {
         }
         stage('build') {
             steps {
-                echo 'Deploy demo jenkins build automatically'
+                echo 'Deploy demo jenkins build automatically with java 11'
                 sh 'mvn --version'
 
                 dir('/var/lib/jenkins/workspace/jenkins_demo_main') {
