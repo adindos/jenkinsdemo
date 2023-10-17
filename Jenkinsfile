@@ -30,7 +30,7 @@ pipeline {
             steps {
                 script {
                     def stagingPath = "/usr/local/etc/${env.DEPLOYMENT_TIMESTAMP}"
-                    sh "sudo mkdir -p ${stagingPath}"
+                    sh "mkdir -p ${stagingPath}"
                     sh "cp /var/lib/jenkins/workspace/jenkins_demo_main/target/jenkinsdemo-0.0.1-SNAPSHOT.jar ${stagingPath}"
                 }
                 echo 'Deploy demo jenkins automatically #'
