@@ -18,7 +18,7 @@ pipeline {
                 echo 'Deploy demo jenkins build automatically'
                 sh 'mvn --version'
 
-                dir('/var/lib/jenkins/workspace/demojenkins') {
+                dir('/var/lib/jenkins/workspace/jenkins_demo_main') {
                      sh 'mvn clean package -DskipTests'
                 }
             }
