@@ -37,7 +37,6 @@ pipeline {
                          sh 'pwd'
                              dir('/usr/local/etc/jenkinsdemo') {
                                  sh "java -jar ${jarFilename}&"
-                                 sh "disown -h"
                              }
                          echo 'Deploy demo jenkins automatically '
                 }
