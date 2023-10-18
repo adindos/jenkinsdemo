@@ -34,9 +34,8 @@ pipeline {
                     def jarFilename = "jenkinsdemo-0.0.1-SNAPSHOT.jar"
                     //sh "mkdir -p ${stagingPath}"
                          sh "cp /var/lib/jenkins/workspace/jenkins_demo_main/target/${jarFilename} ${deploymentPath}"
-                         sh "cd /usr/local/etc/jenkinsdemo"
                          sh 'pwd'
-                         sh "java -jar ${jarFilename}"
+                         sh "java -jar ${deploymentPath}/${jarFilename}"
                          echo 'Deploy demo jenkins automatically/with change dir '
                 }
             }
