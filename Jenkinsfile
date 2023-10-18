@@ -26,16 +26,20 @@ pipeline {
                 }
             }
         }
-        stage('Create Staging Path') {
+        stage('deploy') {
             steps {
                 script {
-                    //def stagingPath = "/usr/local/etc/${env.DEPLOYMENT_TIMESTAMP}"
-                    def stagingPath = "/usr/local/etc/jenkinsdemo"
+                    //def deploymentPath = "/usr/local/etc/${env.DEPLOYMENT_TIMESTAMP}"
+                    def deploymentPath = "/usr/local/etc/jenkinsdemo"
+                    def jarFilename = "jenkinsdemo-0.0.1-SNAPSHOT.jar"
                     //sh "mkdir -p ${stagingPath}"
-                    sh "cp /var/lib/jenkins/workspace/jenkins_demo_main/target/jenkinsdemo-0.0.1-SNAPSHOT.jar ${stagingPath}"
-                    sh 'java -jar ${stagingPath}/jenkinsdemo-0.0.1-SNAPSHOT.jar'
+                    sh "cp /var/lib/jenkins/workspace/jenkins_demo_main/target/${jarFilename} ${deploymentPath}"
+                    sh 'java -jar ${deploymentPath}/${jarFilename}'
+                     dir('${deploymentPath}') {
+                         sh 'java -jar ${jarFilename}'
+                         echo 'Deploy demo jenkins automatically'
+                    }
                 }
-                echo 'Deploy demo jenkins automatically #10'
             }
         }
     }
