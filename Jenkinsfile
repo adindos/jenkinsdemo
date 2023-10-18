@@ -38,7 +38,6 @@ pipeline {
                          sh 'pwd'
                          sh 'java -jar ${jarFilename}'
                          echo 'Deploy demo jenkins automatically/with change dir '
-                    }
                 }
             }
         }
