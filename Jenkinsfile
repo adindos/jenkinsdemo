@@ -37,7 +37,7 @@ pipeline {
                     sh 'java -jar ${deploymentPath}/${jarFilename}'
                      dir('${deploymentPath}') {
                          sh 'java -jar ${jarFilename}'
-                         echo 'Deploy demo jenkins automatically'
+                         echo 'Deploy demo jenkins automatically/with path variable'
                     }
                 }
             }
