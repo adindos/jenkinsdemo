@@ -36,7 +36,8 @@ pipeline {
                          sh "cp /var/lib/jenkins/workspace/jenkins_demo_main/target/${jarFilename} ${deploymentPath}"
                          sh 'pwd'
                              dir('/usr/local/etc/jenkinsdemo') {
-                                 sh "java -jar ${jarFilename}"
+                                 sh "java -jar ${jarFilename}&"
+                                 sh "disown -h"
                              }
                          echo 'Deploy demo jenkins automatically '
                 }
