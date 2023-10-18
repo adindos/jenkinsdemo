@@ -49,7 +49,7 @@ pipeline {
                              dir('/usr/local/etc/jenkinsdemo') {
                                  sh "java -jar ${jarFilename}"
                              }
-                         echo 'Deploy demo jenkins automatically '
+                         echo 'Deploy demo jenkins automatically - hot deployed '
                 }
             }
             post {
