@@ -39,22 +39,20 @@ pipeline {
                          echo 'Deploy demo jenkins automatically '
                 }
             }
-        }
-    }
-
-    
-    post {
-        success {
-            // This block runs if the entire pipeline is successful
-            echo 'Deployment was successful!'
-            // You can add more post-deployment steps or notifications here
-        }
+            post {
+                success {
+                // This block runs if the entire pipeline is successful
+                echo 'Deployment was successful!'
+                // You can add more post-deployment steps or notifications here
+                }
         
-        failure {
-            // This block runs if the pipeline fails
-            echo 'Deployment failed!'
-            // You can add actions for failure scenarios here
+                failure {
+                // This block runs if the pipeline fails
+                echo 'Deployment failed!'
+                // You can add actions for failure scenarios here
+                }
+            }
         }
     }
-    
+ 
 }
