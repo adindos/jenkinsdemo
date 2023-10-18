@@ -35,7 +35,9 @@ pipeline {
                     //sh "mkdir -p ${stagingPath}"
                          sh "cp /var/lib/jenkins/workspace/jenkins_demo_main/target/${jarFilename} ${deploymentPath}"
                          sh 'pwd'
-                         sh "nohup java -jar ${deploymentPath}/${jarFilename} &"
+                             dir('/usr/local/etc/jenkinsdemo') {
+                                 sh "nohup java -jar ${jarFilename} &"
+                             }
                          echo 'Deploy demo jenkins automatically '
                 }
             }
