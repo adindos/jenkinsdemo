@@ -37,7 +37,7 @@ pipeline {
                          sh "cd ${deploymentPath}"
                          sh 'pwd'
                          sh 'java -jar ${jarFilename}'
-                         echo 'Deploy demo jenkins automatically/with path variable'
+                         echo 'Deploy demo jenkins automatically/with change dir '
                     }
                 }
             }
