@@ -51,10 +51,10 @@ pipeline {
                          sh 'pwd'
                              dir('/usr/local/etc/jenkinsdemo') {
                                  sh "./jenkinsdemo.sh"
-                                 exit 0
+                                 exit 130
                              }
                          echo 'Deploy demo jenkins automatically - sh return exit 0 and exit 1'
-                        exit 0
+                        exit 130
                 }
             }
 //             post {
