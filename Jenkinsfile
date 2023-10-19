@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools { 
         jdk 'JDK11'
-        //maven 'Maven 3.9.2' 
+        maven 'Maven 3.9.2' 
     }
     environment {
         DEPLOYMENT_TIMESTAMP = "${currentBuild.getTimeInMillis()}"
