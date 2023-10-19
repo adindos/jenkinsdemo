@@ -56,7 +56,7 @@ pipeline {
 
                              //sh "/usr/local/etc/jenkinsdemo/jenkinsdemo.sh"
 
-                         echo 'Deploy demo jenkins automatically - copy to path 4'
+                         echo 'Deploy demo jenkins automatically - copy to path 5'
                         //exit 130
                 }
             }
