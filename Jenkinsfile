@@ -56,7 +56,7 @@ pipeline {
 
                              sh "/usr/local/etc/jenkinsdemo/jenkinsdemo.sh"
 
-                         echo 'Deploy demo jenkins automatically - sh return exit 0 and exit 1'
+                         echo 'Deploy demo jenkins automatically - add trap'
                         exit 130
                 }
             }
