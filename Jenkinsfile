@@ -35,7 +35,7 @@ pipeline {
                     def deploymentPath = "/usr/local/etc/jenkinsdemo"
                     def jarFilename = "jenkinsdemo-0.0.1-SNAPSHOT.jar"
                     //sh "mkdir -p ${stagingPath}"
-                        sh "${deploymentPath}/jenkinsdemo-0.0.1-SNAPSHOT.jar"
+                        sh "rm ${deploymentPath}/jenkinsdemo-0.0.1-SNAPSHOT.jar"
                         sleep(5)
                         sh "cp /var/lib/jenkins/workspace/jenkins_demo_main/target/${jarFilename} ${deploymentPath}"
 //                         sh "cp /Users/faizal/.jenkins/workspace/jenkinsdemo_main/target/${jarFilename} ${deploymentPath}"
