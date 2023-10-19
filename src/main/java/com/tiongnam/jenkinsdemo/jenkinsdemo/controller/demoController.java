@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 public class demoController {
     @GetMapping("/")
     public @ResponseBody String getBook() {
-        return "Welcome Demo New";
+        return "Welcome Demo 2";
     }
 
 }
