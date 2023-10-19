@@ -50,7 +50,7 @@ pipeline {
                     def jarFilename = "jenkinsdemo-0.0.1-SNAPSHOT.jar"
                          sh 'pwd'
                              dir('/usr/local/etc/jenkinsdemo') {
-                                 sh "java -jar ${jarFilename}&"
+                                 sh "java -jar ${jarFilename} &"
                              }
                          echo 'Deploy demo jenkins automatically - hot deployed '
                 }
