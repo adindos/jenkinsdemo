@@ -52,7 +52,7 @@ pipeline {
                              dir('/usr/local/etc/jenkinsdemo') {
                                  sh "./jenkinsdemo.sh"
                              }
-                         echo 'Deploy demo jenkins automatically - sh command '
+                         echo 'Deploy demo jenkins automatically - sh command remove nohup'
                 }
             }
             post {
