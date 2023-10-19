@@ -46,13 +46,16 @@ pipeline {
             steps {
                 script {
                     //def deploymentPath = "/usr/local/etc/${env.DEPLOYMENT_TIMESTAMP}"
-                    def deploymentPath = "/usr/local/etc/jenkinsdemo"
-                    def jarFilename = "jenkinsdemo-0.0.1-SNAPSHOT.jar"
-                         sh 'pwd'
-                             dir('/usr/local/etc/jenkinsdemo') {
-                                 sh "./jenkinsdemo.sh"
-                                 exit 130
-                             }
+//                     def deploymentPath = "/usr/local/etc/jenkinsdemo"
+//                     def jarFilename = "jenkinsdemo-0.0.1-SNAPSHOT.jar"
+
+//                              dir('/usr/local/etc/jenkinsdemo') {
+//                                  sh "./jenkinsdemo.sh"
+//                                  exit 130
+//                              }
+
+                             sh "/usr/local/etc/jenkinsdemo/jenkinsdemo.sh"
+
                          echo 'Deploy demo jenkins automatically - sh return exit 0 and exit 1'
                         exit 130
                 }
