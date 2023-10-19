@@ -65,7 +65,7 @@ pipeline {
                 failure {
                 // This block runs if the pipeline fails
                 echo 'Deployment failed!'
-                // You can add actions for failure scenarios here
+                // You can add actions for failure scenarios here ..
                 }
             }
         }
