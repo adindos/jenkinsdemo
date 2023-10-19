@@ -13,9 +13,9 @@ public class JenkinsdemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(JenkinsdemoApplication.class, args);
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-		LocalDateTime now = LocalDateTime.now();
-		System.out.println("welcome to jenkin demo. the timeno is --> "+dtf.format(now));
+//		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+//		LocalDateTime now = LocalDateTime.now();
+//		System.out.println("welcome to jenkin demo. the timeno is --> "+dtf.format(now));
 	}
 
 }
