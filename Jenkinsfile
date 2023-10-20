@@ -20,7 +20,7 @@ pipeline {
             steps {
                 echo 'Build demo jenkins automatically - here is mvn again'
                 sh 'mvn --version'
-                dir('/var/lib/jenkins/workspace/jenkins_demo_main') {
+                dir('/root/.jenkins/workspace/Jenkins_Demo_main') {
                      sh 'mvn clean package -DskipTests'
                 }
 //                 dir('/Users/faizal/.jenkins/workspace/jenkinsdemo_main') {
@@ -31,15 +31,15 @@ pipeline {
         stage('deploy') {
             steps {
                 script {
-                    //def deploymentPath = "/usr/local/etc/${env.DEPLOYMENT_TIMESTAMP}"
-                    def deploymentPath = "/usr/local/etc/jenkinsdemo"
-                    def jarFilename = "jenkinsdemo-0.0.1-SNAPSHOT.jar"
-                    //sh "mkdir -p ${stagingPath}"
-                        sh "rm ${deploymentPath}/jenkinsdemo-0.0.1-SNAPSHOT.jar"
-                        sleep(5)
-                        sh "cp /var/lib/jenkins/workspace/jenkins_demo_main/target/${jarFilename} ${deploymentPath}"
-//                         sh "cp /Users/faizal/.jenkins/workspace/jenkinsdemo_main/target/${jarFilename} ${deploymentPath}"
-                        echo 'transfer jar file to deployment folder '
+//                     //def deploymentPath = "/usr/local/etc/${env.DEPLOYMENT_TIMESTAMP}"
+//                     def deploymentPath = "/usr/local/etc/jenkinsdemo"
+//                     def jarFilename = "jenkinsdemo-0.0.1-SNAPSHOT.jar"
+//                     //sh "mkdir -p ${stagingPath}"
+//                         sh "rm ${deploymentPath}/jenkinsdemo-0.0.1-SNAPSHOT.jar"
+//                         sleep(5)
+//                         sh "cp /var/lib/jenkins/workspace/jenkins_demo_main/target/${jarFilename} ${deploymentPath}"
+// //                         sh "cp /Users/faizal/.jenkins/workspace/jenkinsdemo_main/target/${jarFilename} ${deploymentPath}"
+//                         echo 'transfer jar file to deployment folder '
                 }
             }
         }
