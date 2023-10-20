@@ -18,7 +18,7 @@ pipeline {
         }
         stage('build') {
             steps {
-                echo 'Build demo jenkins automatically'
+                echo 'Build demo jenkins automatically - here is mvn'
                 sh 'mvn --version'
                 dir('/var/lib/jenkins/workspace/jenkins_demo_main') {
                      sh 'mvn clean package -DskipTests'
