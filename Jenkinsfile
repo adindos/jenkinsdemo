@@ -45,6 +45,13 @@ pipeline {
                         }
                     }
         }
+        stage('execute') {
+                            steps {
+                                script {
+                                    sh "systemctl start jenkinsdemo"
+                                }
+                            }
+        }
 
     }
 
