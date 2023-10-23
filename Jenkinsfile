@@ -52,12 +52,13 @@ pipeline {
     }
     post {
             success {
-                // Archive build artifacts only for the main branch
-                when {
-                    expression { currentBuild.changeSets[0].branch == 'origin/main' }
+                script {
+                    if (currentBuild.changeSets[0].branch == 'origin/main') {
+                        // Archive build artifacts
+                        archiveArtifacts allowEmptyArchive: true, artifacts: '**/*'
+                    }
                 }
-                archiveArtifacts allowEmptyArchive: true, artifacts: '**/*'
             }
-        }
+         }
 
 }
