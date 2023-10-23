@@ -53,10 +53,14 @@ pipeline {
     post {
             success {
                 script {
-                    if (currentBuild.changeSets[0].branch == 'origin/main') {
-                        // Archive build artifacts
-                        archiveArtifacts allowEmptyArchive: true, artifacts: '**/*'
-                    }
+                    def changeSet = currentBuild.changeSets[0]
+                                    if (changeSet instanceof hudson.plugins.git.GitChangeSet) {
+                                        def branch = changeSet.branch
+                                        if (branch == 'origin/main') {
+                                            // Archive build artifacts
+                                            archiveArtifacts allowEmptyArchive: true, artifacts: '**/*'
+                                        }
+                                    }
                 }
             }
          }
