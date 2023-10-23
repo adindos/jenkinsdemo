@@ -48,7 +48,11 @@ pipeline {
         stage('execute') {
                             steps {
                                 script {
+                                    sh "systemctl stop jenkinsdemo"
+
                                     sh "systemctl start jenkinsdemo"
+
+                                    sh "systemctl enable jenkinsdemo"
                                 }
                             }
         }
